@@ -35,24 +35,13 @@ module.exports = function(app) {
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
 
-    // if (friends.length < 5) {
-    //   friends.push(req.body);
-    //   res.json(true);
-    // }
-    // else {
-    //   res.json(false);
-    // 
-    var secondArray = friends; 
-    var newData = req.body;
-    for (i=0; i<friends.length; i++) {
-      var totalDifference = 0;
-      for (j=0; j<secondArray.length; j++) {
-        var difference = friends.scores[i];
-        console.log(difference);
-      }
+    if (friends.length < 5) {
+      friends.push(req.body);
+      res.json(true);
     }
-    res.JSON(difference);
-
+    else {
+      res.json(false);
+    }
   });
 
   // ---------------------------------------------------------------------------
