@@ -47,7 +47,7 @@ module.exports = function(app) {
     for (i=0; i<friends.length; i++) {
       var totalDifference = 0;
       for (j=0; j<secondArray.length; j++) {
-        var difference = friends.scores[i] - secondArray[j];
+        var difference = friends.scores[i];
         console.log(difference);
       }
     }
