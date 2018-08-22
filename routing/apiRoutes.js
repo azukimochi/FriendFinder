@@ -40,7 +40,7 @@ module.exports = function(app) {
       for (j<0; j<friends[i].length; i++) {
         var value = parseInt(friends.scores[j]) + 1;
         console.log(value);
-        res.json(value);
+        res.send(value);
       }
     }
   });
