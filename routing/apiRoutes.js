@@ -36,13 +36,8 @@ module.exports = function(app) {
     // req.body is available since we're using the body-parser middleware
 
     var newData = req.body;
-    for (i<0; i<friends.length; i++) {
-      for (j<0; j<friends[i].length; i++) {
-        var value = parseInt(friends.scores[j]) + 1;
-        console.log(value);
-        res.send(value);
-      }
-    }
+    var value = "1, 2, 3";
+    res.send(value);
   });
 
   // ---------------------------------------------------------------------------
