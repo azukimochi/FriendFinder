@@ -266,15 +266,7 @@
     
     $.post("/api/friends", newData, function(data) {
       
-      // If a table is available... tell user they are booked.
-      if (data) {
-        console.log("Yay! You are officially booked!");
-      }
-      
-      // If a table is available... tell user they on the waiting list.
-      else {
-        console.log("Sorry you are on the wait list");
-      }
+      console.log(data)
       
       // Clear the form when submitting
       $("#username").val("");
