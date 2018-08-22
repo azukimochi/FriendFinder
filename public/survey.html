@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>FriendFinder</title>
@@ -7,19 +8,24 @@
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
 
 </head>
+
 <body>
 
   <div class="container">
 
     <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-list-alt"></span> Survey Questions</h1>
+      <h1 class="text-center">
+        <span class="fa fa-list-alt"></span> Survey Questions</h1>
     </div>
 
     <div class="row">
@@ -45,7 +51,8 @@
               </div>
 
               <div class="panel-heading">
-                <h4 class="panel-title">Answer the following questions on a scale from 1 to 5.</h4><br>
+                <h4 class="panel-title">Answer the following questions on a scale from 1 to 5.</h4>
+                <br>
                 <h5 class="panel-title">Question 1</h5>
                 <h7>Your mind is always buzzing with unexplored ideas and plans.</h7>
               </div>
@@ -57,7 +64,8 @@
                 <option value="4">4</option>
                 <option value="5">5 (Strongly agree)</option>
               </select>
-              <br><br>
+              <br>
+              <br>
 
               <div class="panel-heading">
                 <h5 class="panel-title">Question 2</h5>
@@ -71,119 +79,129 @@
                 <option value="4">4</option>
                 <option value="5">5 (Strongly agree)</option>
               </select>
-              <br><br>
+              <br>
+              <br>
 
               <div class="panel-heading">
-                  <h5 class="panel-title">Question 3</h5>
-                  <h7>You find it easy to stay relaxed and focused even when there is some pressure.</h7>
-                </div>
-  
-                <select id="q3">
-                  <option value="1">1 (Strongly disagree)</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5 (Strongly agree)</option>
-                </select>
-                <br><br>
+                <h5 class="panel-title">Question 3</h5>
+                <h7>You find it easy to stay relaxed and focused even when there is some pressure.</h7>
+              </div>
 
-                <div class="panel-heading">
-                    <h5 class="panel-title">Question 4</h5>
-                    <h7>You rarely do something just out of sheer curiosity.</h7>
-                  </div>
-    
-                  <select id="q4">
-                    <option value="1">1 (Strongly disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly agree)</option>
-                  </select>
-                  <br><br>
-              
-                  <div class="panel-heading">
-                      <h5 class="panel-title">Question 5</h5>
-                      <h7>People can rarely upset you.</h7>
-                    </div>
-      
-                    <select id="q5">
-                      <option value="1">1 (Strongly disagree)</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5 (Strongly agree)</option>
-                    </select>
-                    <br><br>
+              <select id="q3">
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly agree)</option>
+              </select>
+              <br>
+              <br>
 
-                  <div class="panel-heading">
-                      <h5 class="panel-title">Question 6</h5>
-                      <h7>It is often difficult for you to relate to other people’s feelings.</h7>
-                    </div>
-      
-                    <select id="q6">
-                      <option value="1">1 (Strongly disagree)</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5 (Strongly agree)</option>
-                    </select>
-                    <br><br>
+              <div class="panel-heading">
+                <h5 class="panel-title">Question 4</h5>
+                <h7>You rarely do something just out of sheer curiosity.</h7>
+              </div>
 
-                  <div class="panel-heading">
-                      <h5 class="panel-title">Question 7</h5>
-                      <h7>In a discussion, truth should be more important than people’s sensitivities.</h7>
-                    </div>
-      
-                    <select id="q7">
-                      <option value="1">1 (Strongly disagree)</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5 (Strongly agree)</option>
-                    </select>
-                    <br><br>
-              
-                    <div class="panel-heading">
-                      <h5 class="panel-title">Question 8</h5>
-                      <h7>You rarely get carried away by fantasies and ideas.</h7>
-                    </div>
-      
-                    <select id="q8">
-                      <option value="1">1 (Strongly disagree)</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5 (Strongly agree)</option>
-                    </select>
-                    <br><br>
+              <select id="q4">
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly agree)</option>
+              </select>
+              <br>
+              <br>
 
-                    <div class="panel-heading">
-                      <h5 class="panel-title">Question 9</h5>
-                      <h7>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h7>
-                    </div>
-      
-                    <select id="q9">
-                      <option value="1">1 (Strongly disagree)</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5 (Strongly agree)</option>
-                    </select>
-                    <br><br>
+              <div class="panel-heading">
+                <h5 class="panel-title">Question 5</h5>
+                <h7>People can rarely upset you.</h7>
+              </div>
 
-                    <div class="panel-heading">
-                        <h5 class="panel-title">Question 10</h5>
-                        <h7>You feel more energetic after spending time with a group of people.</h7>
-                      </div>
-        
-                      <select id="q10">
-                        <option value="1">1 (Strongly disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly agree)</option>
-                      </select>
-                      <br><br>
+              <select id="q5">
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly agree)</option>
+              </select>
+              <br>
+              <br>
+
+              <div class="panel-heading">
+                <h5 class="panel-title">Question 6</h5>
+                <h7>It is often difficult for you to relate to other people’s feelings.</h7>
+              </div>
+
+              <select id="q6">
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly agree)</option>
+              </select>
+              <br>
+              <br>
+
+              <div class="panel-heading">
+                <h5 class="panel-title">Question 7</h5>
+                <h7>In a discussion, truth should be more important than people’s sensitivities.</h7>
+              </div>
+
+              <select id="q7">
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly agree)</option>
+              </select>
+              <br>
+              <br>
+
+              <div class="panel-heading">
+                <h5 class="panel-title">Question 8</h5>
+                <h7>You rarely get carried away by fantasies and ideas.</h7>
+              </div>
+
+              <select id="q8">
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly agree)</option>
+              </select>
+              <br>
+              <br>
+
+              <div class="panel-heading">
+                <h5 class="panel-title">Question 9</h5>
+                <h7>You think that everyone’s views should be respected regardless of whether they are supported by facts or
+                  not.</h7>
+              </div>
+
+              <select id="q9">
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly agree)</option>
+              </select>
+              <br>
+              <br>
+
+              <div class="panel-heading">
+                <h5 class="panel-title">Question 10</h5>
+                <h7>You feel more energetic after spending time with a group of people.</h7>
+              </div>
+
+              <select id="q10">
+                <option value="1">1 (Strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly agree)</option>
+              </select>
+              <br>
+              <br>
 
               <button type="submit" class="btn btn-primary submit">Submit</button>
             </form>
@@ -197,64 +215,73 @@
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+        <p>
+          <a href="/api/tables">API Table Link</a> |
+          <a href="/api/waitlist">API Wait List</a> |
+          <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a>
+        </p>
       </div>
     </footer>
 
   </div>
 
 </body>
+
 </html>
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
 
-    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
-    $(".submit").on("click", function(event) {
-      event.preventDefault();
-      console.log($( "#q1" ).val());
-      console.log($( "#q2" ).val());
+  $(".submit").on("click", function (event) {
+    event.preventDefault();
 
-      // Here we grab the form elements
-      var newReservation = {
-        customerName: $("#reserve-name").val().trim(),
-        phoneNumber: $("#reserve-phone").val().trim(),
-        customerEmail: $("#reserve-email").val().trim(),
-        customerID: $("#reserve-unique-id").val().trim()
-      };
+    // Here we grab the form elements
+    var newData = {
+      name: $("#username").val().trim(),
+      photo: $("#profile-pic").val().trim(),
+      q1: $("#q1").val(),
+      q2: $("#q2").val(),
+      q3: $("#q3").val(),
+      q4: $("#q4").val(),
+      q5: $("#q5").val(),
+      q6: $("#q6").val(),
+      q7: $("#q7").val(),
+      q8: $("#q8").val(),
+      q9: $("#q9").val(),
+      q10: $("#q10").val(),
+    };
 
-      console.log(newReservation);
+    console.log(newData);
 
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
+    // This line is the magic. It"s very similar to the standard ajax function we used.
+    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+    // depending on if a tables is available or not.
+  });
 
-      $.post("/api/friends", newReservation,
-        function(data) {
+    $.post("/api/friends", newData,
+    function(data) {
 
-          // If a table is available... tell user they are booked.
-          if (data) {
-            alert("Yay! You are officially booked!");
-          }
+// If a table is available... tell user they are booked.
+if (data) {
+  console.log("Yay! You are officially booked!");
+}
 
-          // If a table is available... tell user they on the waiting list.
-          else {
-            alert("Sorry you are on the wait list");
-          }
+// If a table is available... tell user they on the waiting list.
+else {
+  console.log("Sorry you are on the wait list");
+}
 
-          // Clear the form when submitting
-          $("#reserve-name").val("");
-          $("#reserve-phone").val("");
-          $("#reserve-email").val("");
-          $("#reserve-unique-id").val("");
+        // Clear the form when submitting
+        $("#username").val("");
+        $("#profile-pic").val("");
 
-        });
 
-    });
+  });
 
 </script>
