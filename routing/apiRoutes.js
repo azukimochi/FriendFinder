@@ -35,6 +35,7 @@ module.exports = function(app) {
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
       var newData = req.body;
+      var allTotalDif = [];
    
       for (i=0; i<friends.length; i++) {
         var differenceArr = [];
@@ -46,13 +47,14 @@ module.exports = function(app) {
           var totalDif = parseInt(newScore[j]) - parseInt(score[j]);
             var totalDif = difference + Math.abs(totalDif);
             differenceArr.push(totalDif);
-
           }
           var totalDifference = differenceArr.reduce((a, b) => a + b, 0);
           console.log(totalDifference);
+          allTotalDif.push(totalDifference);
         }
-        
-        res.json(totalDifference);
+        var bestMatch = Math.min(...allTotalDif);
+      
+        res.json(bestMatch);
   
   });
 
