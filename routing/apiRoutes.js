@@ -34,7 +34,7 @@ module.exports = function(app) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
-      var newData = req.body
+      var newData = req.body;
       for (i=0; i<friends.length; i++) {
         var differenceArr = [];
         var score = friends[i].scores;
@@ -51,9 +51,9 @@ module.exports = function(app) {
           }
           var sum = differenceArr.reduce((a, b) => a + b, 0);
           console.log(sum);
-          res.send(sum);
-      }
-    
+        }
+        
+        res.send(sum);
   
   });
 
