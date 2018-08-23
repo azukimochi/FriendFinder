@@ -70,6 +70,8 @@ module.exports = function(app) {
           photo: bestMatchPhoto
         }
         res.json(bestMatchObj);
+        friends.push(newData);
+
   
   });
 
