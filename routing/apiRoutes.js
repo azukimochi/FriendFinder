@@ -51,7 +51,7 @@ module.exports = function(app) {
           }
           var sum = differenceArr.reduce((a, b) => a + b, 0);
           console.log(sum);
-          res.send(totalDifference);
+          res.send(sum);
       }
     
   
