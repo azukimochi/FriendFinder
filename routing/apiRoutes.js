@@ -29,25 +29,7 @@ module.exports = function(app) {
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
-  function loopLetters(score, newScore) {
-    for (j = 0; j<score.length; j++) {
-      var difference = 0;
-      var differenceArr = [];
-      var totalDif = parseInt(newScore[j]) - parseInt(score[j]);
-      var totalDif = difference + Math.abs(totalDif);
-      differenceArr.push(totalDif);
-      }
-      createAllTotalDif(differenceArr);
-  }
-
-  function createAllTotalDif(differenceArr) {
-    var allTotalDif = [];
-    var totalDifference = differenceArr.reduce((a, b) => a + b, 0);
-          console.log("Sum of differences: " + totalDifference);
-          allTotalDif.push(totalDifference);
-          
-  }
-
+ 
  
 
   app.post("/api/friends", function(req, res) {
@@ -67,18 +49,17 @@ module.exports = function(app) {
         allNames.push(friends[i].name);
         allPhotos.push(friends[i].photo);
 
-        // for (j = 0; j<score.length; j++) {
-        //   var difference = 0;
-        //   var totalDif = parseInt(newScore[j]) - parseInt(score[j]);
-        //   var totalDif = difference + Math.abs(totalDif);
-        //   differenceArr.push(totalDif);
-        //   }
-        loopLetters(score, newScore);
-
-          // var totalDifference = differenceArr.reduce((a, b) => a + b, 0);
-          // console.log("Sum of differences: " + totalDifference);
-          // allTotalDif.push(totalDifference);
+        for (j = 0; j<score.length; j++) {
+          var difference = 0;
+          var totalDif = parseInt(newScore[j]) - parseInt(score[j]);
+          var totalDif = difference + Math.abs(totalDif);
+          differenceArr.push(totalDif);
         }
+
+          var totalDifference = differenceArr.reduce((a, b) => a + b, 0);
+          console.log("Sum of differences: " + totalDifference);
+          allTotalDif.push(totalDifference);
+      }
         var bestMatchDif = Math.min(...allTotalDif);
         var index = allTotalDif.indexOf(bestMatchDif);
         var bestMatchName = allNames[index];
