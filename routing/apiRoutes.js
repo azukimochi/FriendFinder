@@ -38,12 +38,12 @@ module.exports = function(app) {
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
       var newData = req.body;
-      // var allTotalDif = [];
+      var allTotalDif = [];
       var allNames = [];
       var allPhotos = [];
    
       for (i=0; i<friends.length; i++) {
-        // var differenceArr = [];
+        var differenceArr = [];
         var score = friends[i].scores;
         var newScore = newData.scores;
         allNames.push(friends[i].name);
