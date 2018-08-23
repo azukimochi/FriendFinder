@@ -36,6 +36,7 @@ module.exports = function(app) {
     // req.body is available since we're using the body-parser middleware
     
     var newData = req.body;
+    var totalDifference = [];
     for (i=0; i<friends.length; i++) {
         var score = friends[i].scores;
         var newScore = newData.scores;
@@ -45,7 +46,6 @@ module.exports = function(app) {
           for (j = 0; j<score.length; j++) {
 
             var totalDif = parseInt(newScore[j]) - parseInt(score[j]);
-            var totalDifference = [];
             totalDifference.push(Math.abs(totalDif));
             console.log(totalDifference)
             res.send(totalDifference);
