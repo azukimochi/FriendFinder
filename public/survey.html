@@ -216,8 +216,8 @@
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">×</button>
               <h2 class="modal-title"><strong>Best Match</strong></h2>
+              <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
             <div class="modal-body">
               <h2 id="match-name"></h2>
@@ -260,8 +260,16 @@
 
   $(".submit").on("click", function (event) {
     event.preventDefault();
-
-    // Here we grab the form elements
+    if ($("#username").val() == "" || $("#profile-pic").val() == "" || $("#username").val() == "" && $("#profile-pic").val() == "") {
+      alert("You haven't filled in all the fields!")
+      event.preventDefault();
+    } else {
+      postFunction();
+    }
+  });
+  // Here we grab the form elements
+  function postFunction() {
+    
     var newData = {
       name: $("#username").val().trim(),
       photo: $("#profile-pic").val().trim(),
@@ -278,13 +286,8 @@
         $("#q10").val(),
       ]
     };
-
+  
     console.log(newData);
-
-    // This line is the magic. It"s very similar to the standard ajax function we used.
-    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a tables is available or not.
     
     $.post("/api/friends", newData, function(data) {
       
@@ -293,16 +296,17 @@
       
       $("#match-name").text(data.name);
       $("#match-img").attr("src", data.photo);
-
+  
           // Show the modal with the best match
       $("#results-modal").modal("toggle");
-
+  
       // Clear the form when submitting
       $("#username").val("");
       $("#profile-pic").val("");
       
     });
+  }
       
-    });
+   
     
     </script>
