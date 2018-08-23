@@ -29,7 +29,7 @@ module.exports = function(app) {
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
-  function loopLetters(score) {
+  function loopLetters(score, newScore) {
     for (j = 0; j<score.length; j++) {
       var difference = 0;
       var totalDif = parseInt(newScore[j]) - parseInt(score[j]);
@@ -60,8 +60,8 @@ module.exports = function(app) {
         //   var totalDif = difference + Math.abs(totalDif);
         //   differenceArr.push(totalDif);
         //   }
-        loopLetters(score);
-        
+        loopLetters(score, newScore);
+
           var totalDifference = differenceArr.reduce((a, b) => a + b, 0);
           console.log("Sum of differences: " + totalDifference);
           allTotalDif.push(totalDifference);
