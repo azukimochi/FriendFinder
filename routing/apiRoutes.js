@@ -29,6 +29,14 @@ module.exports = function(app) {
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
+  function loopLetters(score) {
+    for (j = 0; j<score.length; j++) {
+      var difference = 0;
+      var totalDif = parseInt(newScore[j]) - parseInt(score[j]);
+      var totalDif = difference + Math.abs(totalDif);
+      differenceArr.push(totalDif);
+      }
+  }
   app.post("/api/friends", function(req, res) {
 
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
@@ -46,12 +54,14 @@ module.exports = function(app) {
         allNames.push(friends[i].name);
         allPhotos.push(friends[i].photo);
 
-        for (j = 0; j<score.length; j++) {
-          var difference = 0;
-          var totalDif = parseInt(newScore[j]) - parseInt(score[j]);
-          var totalDif = difference + Math.abs(totalDif);
-          differenceArr.push(totalDif);
-          }
+        // for (j = 0; j<score.length; j++) {
+        //   var difference = 0;
+        //   var totalDif = parseInt(newScore[j]) - parseInt(score[j]);
+        //   var totalDif = difference + Math.abs(totalDif);
+        //   differenceArr.push(totalDif);
+        //   }
+        loopLetters(score);
+        
           var totalDifference = differenceArr.reduce((a, b) => a + b, 0);
           console.log("Sum of differences: " + totalDifference);
           allTotalDif.push(totalDifference);
