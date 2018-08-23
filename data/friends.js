@@ -16,8 +16,8 @@
 
 var tableArr = [
   {
-  "name":"Ahmed",
-  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "name":"Tony Stark",
+  "photo":"https://i.imgur.com/vfh0Tl7.jpg",
   "scores":[
       5,
       1,
@@ -32,8 +32,8 @@ var tableArr = [
     ]
   }, 
   {
-    "name":"Jolie",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name":"Stan Lee",
+    "photo":"https://pbs.twimg.com/profile_images/1018943227791982592/URnaMrya_400x400.jpg",
     "scores":[
         4,
         2,
@@ -48,8 +48,8 @@ var tableArr = [
       ]
     }, 
     {
-      "name":"Carl",
-      "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+      "name":"Danai Gurira",
+      "photo":"https://thenypost.files.wordpress.com/2016/02/danai10.jpg?quality=90&strip=all&strip=all",
       "scores":[
           1,
           4,
