@@ -29,7 +29,7 @@ module.exports = function(app) {
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
-  function loopLetters(score, newScore, allNames, allPhotos) {
+  function loopLetters(score, newScore) {
     for (j = 0; j<score.length; j++) {
       var difference = 0;
       var differenceArr = [];
@@ -37,29 +37,18 @@ module.exports = function(app) {
       var totalDif = difference + Math.abs(totalDif);
       differenceArr.push(totalDif);
       }
-      createAllTotalDif(differenceArr, allNames, allPhotos);
+      createAllTotalDif(differenceArr);
   }
 
-  function createAllTotalDif(differenceArr, allNames, allPhotos) {
+  function createAllTotalDif(differenceArr) {
     var allTotalDif = [];
     var totalDifference = differenceArr.reduce((a, b) => a + b, 0);
           console.log("Sum of differences: " + totalDifference);
           allTotalDif.push(totalDifference);
-          createResult(allTotalDif, allNames, allPhotos)
+          
   }
 
-  function createResult(allTotalDif, allNames, allPhotos) {
-    var bestMatchDif = Math.min(...allTotalDif);
-    var index = allTotalDif.indexOf(bestMatchDif);
-    var bestMatchName = allNames[index];
-    var bestMatchPhoto = allPhotos[index];
-    var bestMatchObj = {
-      name: bestMatchName,
-      difference: bestMatchDif,
-      photo: bestMatchPhoto
-    }
-    res.json(bestMatchObj);
-  }
+ 
 
   app.post("/api/friends", function(req, res) {
 
@@ -84,22 +73,22 @@ module.exports = function(app) {
         //   var totalDif = difference + Math.abs(totalDif);
         //   differenceArr.push(totalDif);
         //   }
-        loopLetters(score, newScore, allNames, allPhotos);
+        loopLetters(score, newScore);
 
           // var totalDifference = differenceArr.reduce((a, b) => a + b, 0);
           // console.log("Sum of differences: " + totalDifference);
           // allTotalDif.push(totalDifference);
         }
-        // var bestMatchDif = Math.min(...allTotalDif);
-        // var index = allTotalDif.indexOf(bestMatchDif);
-        // var bestMatchName = allNames[index];
-        // var bestMatchPhoto = allPhotos[index];
-        // var bestMatchObj = {
-        //   name: bestMatchName,
-        //   difference: bestMatchDif,
-        //   photo: bestMatchPhoto
-        // }
-        // res.json(bestMatchObj);
+        var bestMatchDif = Math.min(...allTotalDif);
+        var index = allTotalDif.indexOf(bestMatchDif);
+        var bestMatchName = allNames[index];
+        var bestMatchPhoto = allPhotos[index];
+        var bestMatchObj = {
+          name: bestMatchName,
+          difference: bestMatchDif,
+          photo: bestMatchPhoto
+        }
+        res.json(bestMatchObj);
   
   });
 
