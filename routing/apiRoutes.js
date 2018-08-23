@@ -52,7 +52,7 @@ module.exports = function(app) {
           console.log(totalDifference);
         }
         
-        res.send(totalDifference);
+        res.json(totalDifference);
   
   });
 
