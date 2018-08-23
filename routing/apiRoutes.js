@@ -36,25 +36,36 @@ module.exports = function(app) {
     // req.body is available since we're using the body-parser middleware
       var newData = req.body;
       var allTotalDif = [];
+      var allNames = [];
+      var allPhotos = [];
    
       for (i=0; i<friends.length; i++) {
         var differenceArr = [];
         var score = friends[i].scores;
         var newScore = newData.scores;
+        allNames.push(friends[i].name);
+        allPhotos.push(friends[i].photo);
 
         for (j = 0; j<score.length; j++) {
           var difference = 0;
           var totalDif = parseInt(newScore[j]) - parseInt(score[j]);
-            var totalDif = difference + Math.abs(totalDif);
-            differenceArr.push(totalDif);
+          var totalDif = difference + Math.abs(totalDif);
+          differenceArr.push(totalDif);
           }
           var totalDifference = differenceArr.reduce((a, b) => a + b, 0);
-          console.log(totalDifference);
+          console.log("Sum of differences: " + totalDifference);
           allTotalDif.push(totalDifference);
         }
-        var bestMatch = Math.min(...allTotalDif);
-      
-        res.json(bestMatch);
+        var bestMatchDif = Math.min(...allTotalDif);
+        var index = allTotalDif.indexOf(bestMatchDif);
+        var bestMatchName = allNames[index];
+        var bestMatchPhoto = allPhotos[index];
+        var bestMatchObj = {
+          name: bestMatchName,
+          difference: bestMatchDif,
+          photo: bestMatchPhoto
+        }
+        res.json(bestMatchObj);
   
   });
 
