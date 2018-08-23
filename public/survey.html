@@ -267,7 +267,8 @@
     $.post("/api/friends", newData, function(data) {
       
       // If a table is available... tell user they are booked.
-      console.log("The bestMatchObj: " + data);
+      console.log("The bestMatchObj: " + JSON.stringify(data));
+      console.log("The bestMatchObj: " + JSON.parse(data));
       
       // Clear the form when submitting
       $("#username").val("");
