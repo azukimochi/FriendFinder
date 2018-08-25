@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>FriendFinder</title>
 
-  <!-- Latest compiled and minified CSS & JS -->
+  <!--  Remember to avoid using the slim version of jquery, as it will prevent some bootstrap components to activate (eg. drop-down) -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -15,9 +14,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
 
-
 </head>
-
 <body>
 
   <div class="container">
@@ -174,7 +171,8 @@
               <div class="panel-heading">
                 <h5 class="panel-title">Question 9</h5>
                 <h7>You think that everyone’s views should be respected regardless of whether they are supported by facts or
-                  not.</h7>
+                  not.
+                </h7>
               </div>
 
               <select id="q9">
@@ -207,16 +205,18 @@
 
           </div>
         </div>
-
       </div>
 
+      <!-- Modal -->
       <div id="results-modal" class="modal fade" role="dialog" style="display: none;">
         <div class="modal-dialog">
-    
+
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <h2 class="modal-title"><strong>Best Match</strong></h2>
+              <h2 class="modal-title">
+                <strong>Best Match</strong>
+              </h2>
               <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
             <div class="modal-body">
@@ -227,13 +227,9 @@
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
-    
         </div>
       </div>
-
-
     </div>
-
 
     <footer class="footer">
       <div class="container">
@@ -243,21 +239,13 @@
         </p>
       </div>
     </footer>
-
   </div>
-
 </body>
-
 </html>
 
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
 
-  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-
+// <!-- Function that runs when user hits the submit button on route /survey  -->
   $(".submit").on("click", function (event) {
     event.preventDefault();
     if ($("#username").val() == "" || $("#profile-pic").val() == "" || $("#username").val() == "" && $("#profile-pic").val() == "") {
@@ -267,9 +255,9 @@
       postFunction();
     }
   });
+
   // Here we grab the form elements
   function postFunction() {
-    
     var newData = {
       name: $("#username").val().trim(),
       photo: $("#profile-pic").val().trim(),
@@ -286,27 +274,24 @@
         $("#q10").val(),
       ]
     };
-  
+
+    //console.log the values of the object user pushed into the friends array 
     console.log(newData);
-    
-    $.post("/api/friends", newData, function(data) {
-      
-      // If a table is available... tell user they are booked.
+
+    $.post("/api/friends", newData, function (data) {
+
+      // console.logging the results to test which object in the friends array contains the best match 
       console.log("The bestMatchObj: " + JSON.stringify(data));
-      
+
       $("#match-name").text(data.name);
       $("#match-img").attr("src", data.photo);
-  
-          // Show the modal with the best match
+
+      // A modal will appear with the best match (lowest total difference)
       $("#results-modal").modal("toggle");
-  
-      // Clear the form when submitting
+
+      // Clear the username and profile pic fields after submission 
       $("#username").val("");
       $("#profile-pic").val("");
-      
     });
   }
-      
-   
-    
-    </script>
+</script>
